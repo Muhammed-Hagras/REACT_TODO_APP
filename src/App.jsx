@@ -1,15 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Todo from './components/Todo'
+import TodoForm from './components/TodoForm'
 
 function App() {
-  const [count, setCount] = useState(0)
+  let[todos, setTodos] = useState([])
+
+  const addTodo = (todo) => {
+    setTodos(
+      [todo,...todos]
+    )
+  }
+
+  const handleDelete = (id) => {
+    setTodos(
+      todos.filter(todo => todo.id !== id)
+    )
+  }
 
   return (
     <div className="App">
      <h2>ToDo APP </h2>
-     
+     <TodoForm addTodo= {addTodo}/>
+     {todos.map((todo) =>
+      <Todo key={todo.id} todo={todo}  handleDelete={handleDelete}/>
+     )}
+
     </div>
   )
 }
