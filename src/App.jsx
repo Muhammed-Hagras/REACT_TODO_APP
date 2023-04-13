@@ -5,6 +5,7 @@ import TodoForm from "./components/TodoForm";
 
 function App() {
   let [todos, setTodos] = useState([]);
+  let [todosToShow, setTodosToShow] = useState("all");
 
   const addTodo = (todo) => {
     setTodos([todo, ...todos]);
@@ -29,20 +30,23 @@ function App() {
     );
   };
 
-  const  controlShowHandler = (s) => {
-    if(s === "all") {
-      setTodos(todos.filter((todo) => todo))
-    }
-    if(s === "active"){
-      setTodos(todos.filter((todo) => !todo.complete))
-    }
-    if(s === "complete"){
-      setTodos(todos.filter((todo) => todo.complete))
-    }
-
-
-    // setTodos(todos.filter((todo) => ))
+  const removeAllCompletedTodos = () => {
+    setTodos(todos.filter(todo => !todo.complete))
   }
+
+  const  controlShowHandler = (s) => {
+
+    setTodosToShow(s)
+  }
+
+    if(todosToShow === "active"){
+      todos = todos.filter((todo) => !todo.complete)
+    }
+    if(todosToShow === "complete"){
+      todos = todos.filter((todo) => todo.complete)
+    }
+
+  
 
   return (
     <div className="App">
@@ -60,6 +64,7 @@ function App() {
         <button className="btn-show" onClick={() => controlShowHandler("active")} >active</button>
         <button className="btn-show" onClick={() => controlShowHandler("complete")} >complete</button>
       </div>
+      <button className="btn-show" onClick={() =>removeAllCompletedTodos()}>Remove all completed todos</button>
     </div>
   );
 }

@@ -70,15 +70,15 @@ form button {
 .control-show {
   display: flex;
   justify-content: center;
-  margin: 30px auto 0 ;
+  margin: 30px auto 20px ;
   gap: 15px;
 }
 
-.control-show .btn-show{
+.btn-show{
   padding: 10px 20px;
   font-size: 18px;
   border: 0;
-  color: #393838;
+  color: #fff;
   cursor: pointer;
   border-radius: 20px;
 }
