@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 
 function App() {
   let [todos, setTodos] = useState([]);
+
+
+
   let [todosToShow, setTodosToShow] = useState("all");
+
+  useEffect(() => {
+    if (todos.length === 0) return;
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem('todos'));
+    setTodos(todos || []);
+  }, []);
+
 
   const addTodo = (todo) => {
     setTodos([todo, ...todos]);
