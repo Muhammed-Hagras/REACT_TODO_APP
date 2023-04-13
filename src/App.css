@@ -20,21 +20,21 @@ form {
 form input{
   padding: 10px 20px;
   border: 0;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
 form button {
   padding: 8px 20px;
   cursor: pointer;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
 .my-todo{
@@ -47,8 +47,11 @@ form button {
   align-items: center;
   gap: 20px;
   border: 0;
-  border-radius: 15px
-  
+  border-radius: 30px  ;
+  -webkit-border-radius: 30px  ;
+  -moz-border-radius: 30px  ;
+  -ms-border-radius: 30px  ;
+  -o-border-radius: 30px  ;
 }
 
 .my-todo .del-btn {
@@ -62,4 +65,20 @@ form button {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+
+.control-show {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 0 ;
+  gap: 15px;
+}
+
+.control-show .btn-show{
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 0;
+  color: #393838;
+  cursor: pointer;
+  border-radius: 20px;
 }
