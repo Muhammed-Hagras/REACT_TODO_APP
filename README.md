@@ -6,6 +6,7 @@ which contains some features such as:
 * Check completed.
 * Delete todo.
 * Delete All todos.
+* Local storage to load your todos after closing browser.
 
 
 In the project directory, you can run:
